@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/05 22:06:21 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/05 22:12:11 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/05 22:13:12 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	isalnum(int c)
-{
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')
-		|| ('0' <= c && c <= '9'));
-}
+int	isdigit(int c);
+int	isalpha(int c);
+int	isalnum(int c);
+int	isprint(int c);
+int	isascii(int c);
+
+#endif

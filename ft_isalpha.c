@@ -6,18 +6,13 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/05 21:28:45 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/05 22:06:59 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	isalpha(int c)
 {
-	unsigned char chr;
-
-	if (!(0 <= c && c <= 255))
-		return (0);
-	chr = (unsigned char)c;
-	if (('A' <= chr && chr <= 'Z') || ('a' <= chr && chr <= 'z'))
-		return (1);
-	return (0);
+	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
 }
