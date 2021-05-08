@@ -5,10 +5,9 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRCLST	= isalnum isalpha isascii isdigit isprint memset bzero
-#			memset bzero memcpy memccpy memmove memchr memcmp\
+SRCLST	=	memset bzero memcpy memccpy memmove memchr memcmp\
+			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup
 #			strlen strlcpy strlcat strchr strrchr strnstr strncmp atoi\
-#			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup
 
 SOURCES	=	$(addprefix ./ft_, $(addsuffix .c, $(SRCLST)))
 OBJECTS	=	$(SOURCES:%.c=%.o)
