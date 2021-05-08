@@ -1,31 +1,34 @@
+NAME = libft.a
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-TARGET = libft.a
 AR = ar rcs
-LIB = ranlib
 RM = rm -f
 
-SOURCES =	ft_isalnum.c\
-			ft_isalpha.c\
-			ft_isascii.c\
-			ft_isdigit.c\
-	 		ft_isprint.c
-OBJECTS =	$(SOURCES:%.c=%.o)
+SRCLST	= isalnum isalpha isascii isdigit isprint memset bzero
+#			memset bzero memcpy memccpy memmove memchr memcmp\
+#			strlen strlcpy strlcat strchr strrchr strnstr strncmp atoi\
+#			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup
 
-$(TARGET): $(OBJECTS)
-	$(AR) $(TARGET) $(OBJECTS)
-	$(LIB) $(TARGET)
+SOURCES	=	$(addprefix ./ft_, $(addsuffix .c, $(SRCLST)))
+OBJECTS	=	$(SOURCES:%.c=%.o)
 
-all: $(TARGET)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJECTS)
+	$(AR) $(NAME) $(OBJECTS)
+
+all: $(NAME)
 
 clean:
 	$(RM) $(OBJECTS)
 
 fclean: clean
-	$(RM) $(TARGET)
+	$(RM) $(NAME)
 
 re: fclean all
 
 solo: all clean
 
-.PHONY: make all clean fclean re solo
+.PHONY: make bonus all clean fclean re solo

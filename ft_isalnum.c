@@ -6,13 +6,13 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/07 13:47:18 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/08 16:25:19 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalnum(int c)
+int	ft_isalnum(int c)
 {
 	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')
 		|| ('0' <= c && c <= '9'));
