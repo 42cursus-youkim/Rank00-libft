@@ -6,8 +6,8 @@ AR = ar rcs
 RM = rm -f
 
 SRCLST	=	memset bzero memcpy memccpy memmove memchr memcmp\
-			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup
-#			strlen strlcpy strlcat strchr strrchr strnstr strncmp atoi\
+			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup\
+			strlen strlcpy strlcat #strchr strrchr strnstr strncmp atoi
 
 SOURCES	=	$(addprefix ./ft_, $(addsuffix .c, $(SRCLST)))
 OBJECTS	=	$(SOURCES:%.c=%.o)
