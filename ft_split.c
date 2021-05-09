@@ -6,7 +6,7 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 19:47:16 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 21:34:44 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/09 22:35:30 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 static int	st_strsnum(char const *s, char c)
 {
 	size_t	i;
-	size_t	numstrs;
+	size_t	num;
 
 	i = 0;
-	numstrs = 0;
+	num = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-			i++;
-		else
+		if (s[i] && s[i] != c)
 		{
-			numstrs++;
+			num++;
 			while (s[i] && (s[i] != c))
 				i++;
 		}
+		else if (s[i])
+			i++;
 	}
-	return (numstrs);
+	return (num);
 }
 
 static int	st_lenstr(size_t i, char const *s, char c)
@@ -65,11 +65,12 @@ static char	**st_alloc2str(char **str2d, size_t numstrs, char const *s, char c)
 		k = 0;
 		while (s[i] && s[i] != c)
 		{
-			str2d[i][k] = s[i];
+			str2d[j][k] = s[i];
 			i++;
 			k++;
 		}
 		str2d[j][k] = 0;
+		j++;
 	}
 	str2d[j] = 0;
 	return (str2d);
