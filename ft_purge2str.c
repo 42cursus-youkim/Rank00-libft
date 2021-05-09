@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_purge2str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 19:23:14 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 20:30:56 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/09 20:40:36 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/09 20:41:05 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	**ft_purge2str(char **str2d)
 {
-	size_t	first;
-	size_t	last;
-	char	*str;
+	size_t i;
 
-	str = 0;
-	if (s1 && set)
-	{
-		first = 0;
-		last = ft_strlen(s1);
-		while (s1[first] && ft_strchr(set, s1[first]))
-			first++;
-		while (s1[last - 1] && ft_strchr(set, s1[last - 1]) && first < last)
-			last--;
-		str = malloc((last - first + 1) * sizeof(char));
-		if (str)
-			ft_strlcpy(str, &s1[first], last - first + 1);
-	}
-	return (str);
+	i = 0;
+	while (str2d[i])
+		free(str2d[i++]);
+	free(str2d);
+	return (0);
 }

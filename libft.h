@@ -6,7 +6,7 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 22:12:11 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 19:41:16 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/09 21:35:30 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,6 @@ char	**ft_split(char const *s, char c);
 */
 int		ft_isupper(int c);
 int		ft_islower(int c);
+char	**ft_purge2str(char **str2d);
+
 #endif

@@ -8,7 +8,7 @@ RM = rm -f
 SRCLST	=	memset bzero memcpy memccpy memmove memchr memcmp\
 			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup\
 			strlen strlcpy strlcat strchr strrchr strnstr strncmp atoi\
-			islower isupper\
+			islower isupper purge2str\
 			substr strjoin strtrim split
 #itoa strmapi putchar_fd putstr_fd putendl_fd putnbr_fd\
 
