@@ -6,16 +6,11 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:17:02 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 11:29:48 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/09 15:22:00 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_isupper(int c)
-{
-	return ('A' <= c && c <= 'Z');
-}
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

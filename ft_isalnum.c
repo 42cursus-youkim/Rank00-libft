@@ -6,7 +6,7 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/08 16:25:19 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/09 15:27:21 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')
-		|| ('0' <= c && c <= '9'));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

@@ -6,7 +6,7 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:38:57 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/08 21:57:58 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/09 18:29:53 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*dstptr;
 	const unsigned char	*srcptr;
 
-	if (!dst)
-		return (0);
-	if (!n || !src)
+	if (!dst && !src)
 		return (dst);
 	i = 0;
 	srcptr = (unsigned char *)src;
 	dstptr = (unsigned char *)dst;
-	while (i < n && src && dst)
+	while (i < n)
 	{
 		dstptr[i] = srcptr[i];
 		i++;

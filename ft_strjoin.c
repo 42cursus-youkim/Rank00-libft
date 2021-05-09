@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 11:17:02 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 15:22:09 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/09 19:15:36 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/09 19:43:13 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (ft_islower(c))
-		return ((c - 'a') + 'A');
-	return (c);
+	size_t	lens1;
+	size_t	lens2;
+	char	*str;
+
+	if (!s1 || !s2)
+		return (0);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	str = malloc((lens1 + lens2 + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, s1, lens1 + 1);
+	ft_strlcat(str, s2, lens1 + lens2 + 1);
+	return (str);
 }

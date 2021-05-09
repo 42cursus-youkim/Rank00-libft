@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 10:42:42 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 17:59:28 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/09 19:23:14 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/09 19:36:36 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ret;
-	size_t	i;
-	size_t	len;
+	size_t	first;
+	size_t	last;
+	char	*str;
 
-	len = ft_strlen(s1);
-	ret = malloc((len + 1) * sizeof(char));
-	if (!ret)
-		return (0);
-	ret[len] = 0;
-	i = -1;
-	while (++i < len)
-		ret[i] = s1[i];
-	return (ret);
+	str = 0;
+	if (s1 && set)
+	{
+		first = 0;
+		last = ft_strlen(s1);
+		while (s1[first] && ft_strchr(set, s1[first]))
+			first++;
+		while (s1[last - 1] && ft_strchr(set, s1[last - 1]) && first < last)
+			last--;
+		str = malloc((last - first + 1) * sizeof(char));
+		if (str)
+			ft_strlcpy(str, &s1[first], last - first + 1);
+	}
+	return (str);
 }

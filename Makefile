@@ -7,7 +7,10 @@ RM = rm -f
 
 SRCLST	=	memset bzero memcpy memccpy memmove memchr memcmp\
 			isalpha isdigit isalnum isascii isprint toupper tolower calloc strdup\
-			strlen strlcpy strlcat #strchr strrchr strnstr strncmp atoi
+			strlen strlcpy strlcat strchr strrchr strnstr strncmp atoi\
+			islower isupper\
+			substr strjoin strtrim split
+#itoa strmapi putchar_fd putstr_fd putendl_fd putnbr_fd\
 
 SOURCES	=	$(addprefix ./ft_, $(addsuffix .c, $(SRCLST)))
 OBJECTS	=	$(SOURCES:%.c=%.o)

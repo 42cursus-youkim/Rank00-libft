@@ -6,7 +6,7 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/08 19:55:30 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/09 15:26:56 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
+	return (ft_islower(c) || ft_isupper(c));
 }
