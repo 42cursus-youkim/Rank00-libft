@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_sign.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/10 11:18:26 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/10 10:52:27 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/10 10:54:12 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	st_islower(int c)
+int		ft_sign(long n)
 {
-	return ('a' <= c && c <= 'z');
-}
-
-static int	st_isupper(int c)
-{
-	return ('A' <= c && c <= 'Z');
-}
-
-int			ft_isalpha(int c)
-{
-	return (st_islower(c) || st_isupper(c));
+	if (n < 0)
+		return (-1);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 19:47:16 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/09 22:35:30 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/10 11:19:35 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,17 @@ static int	st_lenstr(size_t i, char const *s, char c)
 	return (len);
 }
 
+static char	**st_purge2str(char **str2d)
+{
+	size_t i;
+
+	i = 0;
+	while (str2d[i])
+		free(str2d[i++]);
+	free(str2d);
+	return (0);
+}
+
 static char	**st_alloc2str(char **str2d, size_t numstrs, char const *s, char c)
 {
 	size_t	i;
@@ -61,7 +72,7 @@ static char	**st_alloc2str(char **str2d, size_t numstrs, char const *s, char c)
 			i++;
 		str2d[j] = malloc((st_lenstr(i, s, c) + 1) * sizeof(char));
 		if (!str2d[j])
-			return (ft_purge2str(str2d));
+			return (st_purge2str(str2d));
 		k = 0;
 		while (s[i] && s[i] != c)
 		{

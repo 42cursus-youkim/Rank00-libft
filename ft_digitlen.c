@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_digitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 20:59:15 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/10 11:18:26 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/10 10:56:29 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/10 11:38:40 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	st_islower(int c)
+size_t	ft_digitlen(long n)
 {
-	return ('a' <= c && c <= 'z');
-}
+	size_t	len;
 
-static int	st_isupper(int c)
-{
-	return ('A' <= c && c <= 'Z');
-}
-
-int			ft_isalpha(int c)
-{
-	return (st_islower(c) || st_isupper(c));
+	len = 0;
+	if (!n || ft_sign(n) == -1)
+		len++;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
