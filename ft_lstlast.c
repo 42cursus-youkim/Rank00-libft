@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sign.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 10:52:27 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/10 10:54:12 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/10 18:45:28 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/10 19:06:24 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sign(long n)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (n < 0)
-		return (-1);
-	return (1);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

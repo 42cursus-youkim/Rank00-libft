@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digitlen.c                                      :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 10:56:29 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/10 11:38:40 by youkim           ###   ########.fr       */
+/*   Created: 2021/05/10 12:31:00 by youkim            #+#    #+#             */
+/*   Updated: 2021/05/10 12:38:56 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_digitlen(long n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
+	size_t	i;
+	char	*str;
 
-	len = 0;
-	if (!n || ft_sign(n) == -1)
-		len++;
-	while (n)
+	if (!s || !f)
+		return (0);
+	i = 0;
+	str = ft_strdup(s);
+	if (!str)
+		return (0);
+	while (str[i])
 	{
-		n /= 10;
-		len++;
+		str[i] = f(i, str[i]);
+		i++;
 	}
-	return (len);
+	str[i] = 0;
+	return (str);
 }
