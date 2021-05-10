@@ -6,12 +6,11 @@
 /*   By: youkim <youkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 19:47:16 by youkim            #+#    #+#             */
-/*   Updated: 2021/05/10 11:19:35 by youkim           ###   ########.fr       */
+/*   Updated: 2021/05/10 21:30:42 by youkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	st_strsnum(char const *s, char c)
 {

@@ -29,8 +29,8 @@ $(NAME): $(OBJECTS)
 
 all: $(NAME)
 
-bonus: $(OBJECTB) $(OBJECTC)
-	$(AR) $(NAME) $(OBJECTB) $(OBJECTC)
+bonus: $(OBJECTS) $(OBJECTB) $(OBJECTC)
+	$(AR) $(NAME) $(OBJECTS) $(OBJECTB) $(OBJECTC)
 
 clean:
 	$(RM) $(OBJECTS) $(OBJECTB) $(OBJECTC)
