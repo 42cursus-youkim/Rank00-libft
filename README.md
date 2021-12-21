@@ -1,7 +1,6 @@
 # libft
-reinventing some useful c library. 
+![](https://badge42.herokuapp.com/api/project/youkim/Libft)
 
-# is this safe?
-initial commit verified by moulinette  with score of 115/100.
+reinvent the _**wheel!**_
 
-_warranty void if used to wash dishes._
+at least you get to understand how some useful c library functions work.
